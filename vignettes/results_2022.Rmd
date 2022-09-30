@@ -65,8 +65,8 @@ DT::datatable(women_o)
 ### Sonderwertung
 
 ```{r women_s}
-women_o <- minimarathon::get_results("W", ak_class = "SO")
-DT::datatable(women_o)
+women_s <- minimarathon::get_results("W", ak_class = "SO")
+DT::datatable(women_s)
 
 ```
 )
