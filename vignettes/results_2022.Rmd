@@ -19,25 +19,54 @@ knitr::opts_chunk$set(
 
 # Men
 
-## Elementary School
+## Grundschule
 
-```{r men_all}
-men <- minimarathon::get_results("M")
-DT::datatable(men,
+```{r men_g}
+men_g <- minimarathon::get_results("M", ak_class = "G")
+DT::datatable(men_g,
               rownames = FALSE)
+
+```
+
+### Oberschule
+
+```{r men_o}
+men_o <- minimarathon::get_results("M", ak_class = "O")
+DT::datatable(men_o)
+
+```
+
+### Sonderwertung
+
+```{r men_s}
+men_s <- minimarathon::get_results("M", ak_class = "SO")
+DT::datatable(men_s)
 
 ```
 
 
 # Women
 
-## Elementary School
+## Grundschule
 
-```{r women}
-women <- minimarathon::get_results("W")
-DT::datatable(women)
+```{r women_g}
+women_g <- minimarathon::get_results("W", ak_class = "G")
+DT::datatable(women_g)
+
+```
+### Oberschule
+
+```{r women_o}
+women_o <- minimarathon::get_results("W", ak_class = "O")
+DT::datatable(women_o)
 
 ```
 
+### Sonderwertung
 
+```{r women_s}
+women_o <- minimarathon::get_results("W", ak_class = "SO")
+DT::datatable(women_o)
+
+```
 )

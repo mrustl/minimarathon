@@ -7,6 +7,8 @@ if(FALSE) {
 #' Get Teamstaffel Results Table
 #'
 #' @param sex either "M" for men or "W" for women default: "W"
+#' @param  ak_class "G" (Grundschule), "O" (Oberschule), "SO" (Sonderwertung),
+#' default: "G"
 #' @param year default: 2022
 #' @param base_url default: "https://berlin.r.mikatiming.com"
 #'
@@ -18,10 +20,13 @@ if(FALSE) {
 #' women
 #' @importFrom dplyr arrange bind_rows mutate relocate
 get_results <- function(sex = "W",
+                        ak_class = "G",
                         year = 2022,
                         base_url = "https://berlin.r.mikatiming.com") {
 
-event_id <- "G_2EF90BN8F3"
+stopifnot(ak_class %in% c("G", "O", "SO"))
+
+event_id <- sprintf("%s_2EF90BN8F3", ak_class)
 
 
 url <- sprintf("%s/%s/?page=%d&event=%s&num_results=100&pid=list&search[sex]=%s",

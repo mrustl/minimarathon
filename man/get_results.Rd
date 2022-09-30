@@ -6,12 +6,16 @@
 \usage{
 get_results(
   sex = "W",
+  ak_class = "G",
   year = 2022,
   base_url = "https://berlin.r.mikatiming.com"
 )
 }
 \arguments{
 \item{sex}{either "M" for men or "W" for women default: "W"}
+
+\item{ak_class}{"G" (Grundschule), "O" (Oberschule), "SO" (Sonderwertung),
+default: "G"}
 
 \item{year}{default: 2022}
 
