@@ -1,0 +1,25 @@
+################################################################################
+### generated-with:
+###   type: R-package
+###   name: kwb.pkgbuild
+###   version: 0.2.2
+###   installed-from: https://kwb-r.r-universe.dev (R 4.2.1)
+###   installed-on: '2022-07-10'
+### generated-by:
+###   user: mrustl
+###   function-call: kwb.pkgbuild::create_empty_branch_ghpages("minimarathon", org = "mrustl")
+### generated-on: 2022-09-30 20:07:24
+################################################################################
+
+
+pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - gh-pages
