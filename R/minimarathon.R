@@ -50,8 +50,7 @@ get_result(url)
 
 })
 
-dplyr::bind_rows(res_list)  %>%
-  dplyr::mutate(finish_time = lubridate::hms(.data$finish_time)) %>%
+dplyr::bind_rows(res_list)   %>%
   dplyr::arrange(.data$finish_time) %>%
   dplyr::mutate(place = 1:dplyr::n()) %>%
   dplyr::relocate(.data$place)
@@ -113,8 +112,12 @@ tibble::tibble(
                finish_time = tmp %>%
                  rvest::html_nodes(".type-time") %>%
                  rvest::html_text() %>%
-                 stringr::str_remove_all("^Time")
-)
+                 stringr::str_remove_all("^Time")) %>%
+  dplyr::mutate(finish_time = dplyr::if_else(nchar(.data$finish_time) == 1,
+                                             NA_character_,
+                                             .data$finish_time)) %>%
+  dplyr::mutate(finish_time = lubridate::hms(.data$finish_time))
+
 }
 
 #' Get Number of Pages
