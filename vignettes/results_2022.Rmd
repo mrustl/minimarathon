@@ -17,9 +17,9 @@ knitr::opts_chunk$set(
 
 ```
 
-# Men
+## Men
 
-## Grundschule
+### Grundschule
 
 ```{r men_g}
 men_g <- minimarathon::get_results("M", ak_class = "G")
@@ -45,9 +45,9 @@ DT::datatable(men_s)
 ```
 
 
-# Women
+## Women
 
-## Grundschule
+### Grundschule
 
 ```{r women_g}
 women_g <- minimarathon::get_results("W", ak_class = "G")
