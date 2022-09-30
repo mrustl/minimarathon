@@ -12,7 +12,6 @@ URL: https://github.com/mrustl/teamstaffel
 BugReports: https://github.com/mrustl/minimarathon/issues
 Imports: 
     dplyr,
-    lubridate,
     httr,
     magrittr,
     rlang,

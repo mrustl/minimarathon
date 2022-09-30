@@ -17,7 +17,6 @@ if(FALSE) {
 #' women <- get_results("W")
 #' women
 #' @importFrom dplyr arrange bind_rows mutate relocate
-#' @importFrom  lubridate hms
 get_results <- function(sex = "W",
                         year = 2022,
                         base_url = "https://berlin.r.mikatiming.com") {
@@ -118,7 +117,7 @@ tibble::tibble(
                  stringr::str_remove_all("^Time")) %>%
   dplyr::mutate(finish_time = dplyr::if_else(nchar(.data$finish_time) == 1,
                                              NA_character_,
-                                             lubridate::hms(.data$finish_time)))
+                                             .data$finish_time))
 
 }
 
