@@ -109,6 +109,9 @@ tibble::tibble(
                age_class = age_class %>%
                  rvest::html_text() %>%
                  stringr::str_remove_all("^AC"),
+               school = school %>%
+                 rvest::html_text() %>%
+                 stringr::str_remove_all("^Schule"),
                finish_time = tmp %>%
                  rvest::html_nodes(".type-time") %>%
                  rvest::html_text() %>%
